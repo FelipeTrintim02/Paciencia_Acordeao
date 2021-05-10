@@ -55,10 +55,9 @@ def lista_movimentos_possiveis(baralho, indice):
         return lista_jogadas
 print(lista_movimentos_possiveis(['A♦', '10♥', 'Q♣', 'K♠', '10♣', '4♠'], 4))
 
-def empilha(baralho, indice_o, endice_d):
-    if lista_movimentos_possiveis == []:
-        return "jogada inválida"
-    elif lista_movimentos_possiveis != []:
-        x = baralho.replace(baralho[lista_d], baralho[lista_o])
-        del(baralho[lista_o])
-        return x
+def empilha(baralho,origem,destino):
+    if origem > destino:
+        baralho1 = baralho
+        baralho1[destino] = baralho[origem]
+        del baralho1[origem]
+    return baralho1
