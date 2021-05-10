@@ -31,3 +31,13 @@ def extrai_valor(carta):
         removed = carta.replace('♠', "")
         return removed 
 print(extrai_valor('A♦'))
+
+def lista_movimentos_possiveis(baralho, indice):
+    lista_jogadas = []
+    if indice == 0:
+        return lista_jogadas
+    elif indice < len(baralho):      
+        lista_naipe = []
+        for i in range(len(baralho)):
+            naipe = extrai_naipe(baralho[i])
+            lista_naipe.append(naipe)
