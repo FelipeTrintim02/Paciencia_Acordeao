@@ -30,7 +30,6 @@ def extrai_valor(carta):
     elif '♠' in carta:
         removed = carta.replace('♠', "")
         return removed 
-print(extrai_valor('A♦'))
 
 def lista_movimentos_possiveis(baralho, indice):
     lista_jogadas = []
@@ -54,3 +53,4 @@ def lista_movimentos_possiveis(baralho, indice):
         elif lista_numero[indice] == lista_numero[indice-3] and ((indice - 3) >= 0):
             lista_jogadas.append(3)       
         return lista_jogadas
+print(lista_movimentos_possiveis(['A♦', '10♥', 'Q♣', 'K♠', '10♣', '4♠'], 4))
