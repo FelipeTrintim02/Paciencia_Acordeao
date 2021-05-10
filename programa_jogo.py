@@ -16,4 +16,18 @@ def extrai_naipe(carta):
         return '♣'
     elif '♠' in carta:
         return '♠'  
-print(extrai_naipe('A♦'))
+
+def extrai_valor(carta):
+    if '♦' in carta:
+        removed = carta.replace('♦', "")
+        return removed
+    elif '♥' in carta:
+        removed = carta.replace('♥', "")
+        return removed 
+    elif '♣' in carta:
+        removed = carta.replace('♣', "")
+        return removed 
+    elif '♠' in carta:
+        removed = carta.replace('♠', "")
+        return removed 
+print(extrai_valor('A♦'))
