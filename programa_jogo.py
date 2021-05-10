@@ -57,7 +57,6 @@ print(lista_movimentos_possiveis(['A♦', '10♥', 'Q♣', 'K♠', '10♣', '4�
 
 def empilha(baralho,origem,destino):
     if origem > destino:
-        baralho1 = baralho
-        baralho1[destino] = baralho[origem]
-        del baralho1[origem]
-    return baralho1
+        baralho[destino] = baralho[origem]
+        del baralho[origem]
+    return baralho
