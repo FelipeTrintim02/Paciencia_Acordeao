@@ -41,3 +41,16 @@ def lista_movimentos_possiveis(baralho, indice):
         for i in range(len(baralho)):
             naipe = extrai_naipe(baralho[i])
             lista_naipe.append(naipe)
+            lista_numero = []       
+        for e in range(len(baralho)):    
+            numero = extrai_valor(baralho[e])
+            lista_numero.append(numero)
+        if lista_naipe[indice] == lista_naipe[indice-1]:
+            lista_jogadas.append(1)
+        elif lista_numero[indice] == lista_numero[indice-1]:
+            lista_jogadas.append(1)  
+        if lista_naipe[indice] == lista_naipe[indice-3] and ((indice - 3) >= 0):
+            lista_jogadas.append(3)
+        elif lista_numero[indice] == lista_numero[indice-3] and ((indice - 3) >= 0):
+            lista_jogadas.append(3)       
+        return lista_jogadas
