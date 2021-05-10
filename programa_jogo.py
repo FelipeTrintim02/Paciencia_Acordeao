@@ -53,10 +53,25 @@ def lista_movimentos_possiveis(baralho, indice):
         elif lista_numero[indice] == lista_numero[indice-3] and ((indice - 3) >= 0):
             lista_jogadas.append(3)       
         return lista_jogadas
-print(lista_movimentos_possiveis(['A♦', '10♥', 'Q♣', 'K♠', '10♣', '4♠'], 4))
 
 def empilha(baralho,origem,destino):
     if origem > destino:
         baralho[destino] = baralho[origem]
         del baralho[origem]
     return baralho
+
+def possui_movimentos_possiveis(baralho):
+    lista_nova = []
+    for i in range(0, len(baralho)):
+        if lista_movimentos_possiveis(baralho, i) == []:
+            lista_nova.append(0)
+        else:
+            lista_nova.append(1) 
+    for e in lista_nova:
+        if e == 0:
+            del(e)
+    if lista_nova == []:
+        return False
+    else:
+        return True 
+print(possui_movimentos_possiveis(['A♦', '10♥', 'Q♣', '4♠']))
