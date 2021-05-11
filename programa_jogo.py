@@ -1,3 +1,4 @@
+from random import sample as sp
 def cria_baralho():
     baralho = []
     espadas = ['A♠', '2♠', '3♠', '4♠', '5♠', '6♠', '7♠', '8♠', '9♠', '10♠', 'J♠', 'Q♠', 'K♠']
@@ -74,4 +75,25 @@ def possui_movimentos_possiveis(baralho):
         return False
     else:
         return True 
-print(possui_movimentos_possiveis(['A♦', '10♥', 'Q♣', '4♠']))
+
+x = cria_baralho()
+baralho_jogo = (sp(x, k=52))
+
+class pintar:
+    reset='\033[0m'
+    brightred = '\033[1;31;40m'
+    black = '\033[1;30m'
+
+def colorir_carta(carta):
+    if extrai_naipe(carta) == '♣' or extrai_naipe(carta) == '♠':
+        carta = pintar.black + carta + pintar.reset
+    elif extrai_naipe(carta) == '♥' or extrai_naipe(carta) == '♦':
+        carta = pintar.brightred + carta + pintar.reset
+    return carta
+
+def numero_pintado(baralho):
+    print('         O estado atual do baralho é:')
+    print("   ")
+    for i in range(0, len(baralho)):
+        print(str(i + 1) + ". " + colorir_carta(baralho[i]))
+print(numero_pintado(baralho_jogo))
