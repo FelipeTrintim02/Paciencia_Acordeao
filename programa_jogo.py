@@ -81,14 +81,14 @@ baralho_jogo = (sp(x, k=52))
 
 class pintar:
     reset='\033[0m'
-    brightred = '\033[1;31;40m'
+    vermelho = '\033[1;31;40m'
     black = '\033[1;30m'
 
 def colorir_carta(carta):
     if extrai_naipe(carta) == '♣' or extrai_naipe(carta) == '♠':
         carta = pintar.black + carta + pintar.reset
     elif extrai_naipe(carta) == '♥' or extrai_naipe(carta) == '♦':
-        carta = pintar.brightred + carta + pintar.reset
+        carta = pintar.vermelho + carta + pintar.reset
     return carta
 
 def numero_pintado(baralho):
