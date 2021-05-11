@@ -97,3 +97,16 @@ def numero_pintado(baralho):
     for i in range(0, len(baralho)):
         print(str(i + 1) + ". " + colorir_carta(baralho[i]))
 print(numero_pintado(baralho_jogo))
+
+
+print('|Paciência Acordeão|\n" + "====================.\n' )
+print('Seja bem-vindo(a) ao jogo de Paciência Acordeão! O objetivo deste jogo é colocar todas as cartas em uma mesma pilha.\n')
+print('Existem apenas dois movimentos possíveis:\n' )
+print('1. Empilhar uma carta sobre a carta imediatamente anterior')
+print('2. Empilhar uma carta sobre a terceira carta anterior.\n')
+print('Para que um movimento possa ser realizado basta que uma das duas condições abaixo seja atendida:\n')
+print('1. As duas cartas possuem o mesmo valor') 
+print('ou')
+print('2. As duas cartas possuem o mesmo naipe.\n')
+print('Desde que alguma das condições acima seja satisfeita, qualquer carta pode ser movimentada.\n')
+enter = input('Aperte [ENTER] para para iniciar o jogo...')
