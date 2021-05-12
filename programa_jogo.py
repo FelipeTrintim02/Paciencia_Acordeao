@@ -135,3 +135,15 @@ if enter == "":
 
         elif possiveis == []:
             print('A carta {} não pode ser movida. Por favor, escolha outra carta! '.format(baralho_jogo[card-1]))
+
+    while lista_movimentos_possiveis == False:
+        if len(baralho_jogo) == 1:
+            print('PARABÉNS!! Você é um gênio, ganhou o jogo!!')
+    
+        elif len(baralho_jogo) > 1:
+            print('Você perdeu :(.\n')
+            jogar = input('Gostaria de jogar novamente? Responda com [sim ou não]. ')
+            if jogar == 'sim':
+                lista_movimentos_possiveis == True
+            elif jogar == 'não':
+                print('Obrigado por jogar!')
