@@ -91,12 +91,12 @@ def colorir_carta(carta):
         carta = pintar.vermelho + carta + pintar.reset
     return carta
 
-def numero_pintado(baralho):
+def numero_colorido(baralho):
     print('         O estado atual do baralho é:')
     print("   ")
     for i in range(0, len(baralho)):
         print(str(i + 1) + ". " + colorir_carta(baralho[i]))
-print(numero_pintado(baralho_jogo))
+print(numero_colorido(baralho_jogo))
 
 
 print('|Paciência Acordeão|\n" + "====================.\n' )
@@ -110,3 +110,28 @@ print('ou')
 print('2. As duas cartas possuem o mesmo naipe.\n')
 print('Desde que alguma das condições acima seja satisfeita, qualquer carta pode ser movimentada.\n')
 enter = input('Aperte [ENTER] para para iniciar o jogo...')
+
+if enter == "":
+    x = cria_baralho()
+    baralho_jogo = (sp(x, k=52))
+    print(numero_colorido(baralho_jogo))
+    baralho = numero_colorido(baralho_jogo)
+    while lista_movimentos_possiveis:
+
+        card = int(input('Escolha uma carta (digite um número entre 1 e {}):   '.format(len(baralho_jogo))))
+                
+        possiveis = lista_movimentos_possiveis(baralho_jogo, (card-1))
+        if possiveis == [1, 3]:
+            opcao1 = print('1. {}'.format(baralho_jogo[card-2]))
+            opcao2 = print('3. {}'.format(baralho_jogo[card-4]))
+            pergunta = int(input('Sobre qual carta você quer empilhar o {}: '.format(baralho_jogo[card-1])))
+            print(numero_colorido(empilha(baralho_jogo, card-1, (card-1)-pergunta)))
+
+        elif possiveis == [1]:
+            print(numero_colorido(empilha(baralho_jogo, card-1, card-2)))
+
+        elif possiveis == [3]:
+            print(numero_colorido(empilha(baralho_jogo, card-1, card-4)))
+
+        elif possiveis == []:
+            print('A carta {} não pode ser movida. Por favor, escolha outra carta! '.format(baralho_jogo[card-1]))
